@@ -33,16 +33,24 @@ export default function SendEmail() {
           <option value={CHAU_EMAIL}>Chau Truong</option>
           <option value={`${CHAU_EMAIL}; ${MICHAEL_EMAIL}`}>Both</option>
         </select>
-        <label className='font-semibold py-2'>What is your name?</label>
+        <label className='font-semibold py-2' htmlFor='input-name'>
+          What is your name?
+        </label>
         <input
           required
           className='p-2 rounded-md text-zinc-900 outline-none border-2 border-backgroundLightButtons dark:border-teal-600 shadow-md'
           value={name}
           type={'text'}
+          name='input-name'
+          id='input-name'
           onChange={(e) => setName(e.target.value)}
         />
-        <label className='font-semibold py-2'>What is your message</label>
+        <label className='font-semibold py-2' htmlFor='input-message'>
+          What is your message
+        </label>
         <textarea
+          name='input-message'
+          id='input-message'
           required
           className='p-2 rounded-md text-zinc-900 outline-none border-2 border-backgroundLightButtons dark:border-teal-600 shadow-md'
           rows={5}
