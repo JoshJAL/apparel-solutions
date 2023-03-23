@@ -32,6 +32,7 @@ export default function DropdownMenu() {
         >
           <div className='py-1'>
             <DropdownMenuItem href='#about'>About</DropdownMenuItem>
+            <DropdownMenuItem href='#contact'>Contact Us</DropdownMenuItem>
             <DropdownMenuItem href='#videos'>Videos</DropdownMenuItem>
           </div>
         </Menu.Items>
