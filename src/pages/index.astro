@@ -1,15 +1,25 @@
 ---
+import BaseHead from '../components/BaseHead.astro';
+import Blurb from '../components/blurb/Blurb.astro';
+import Body from '../components/Body.astro';
+import Content from '../components/Content.astro';
+import Header from '../components/header/Header.astro';
+import Main from '../components/Main.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+
+  <Body>
+    <Header />
+    <Main>
+      <Content>
+        <Blurb />
+      </Content>
+    </Main>
+  </Body>
 </html>
