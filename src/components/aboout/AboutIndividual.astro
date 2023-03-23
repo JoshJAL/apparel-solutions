@@ -1,0 +1,44 @@
+---
+import { IoLogoLinkedin } from 'react-icons/io5/index.js';
+import { AiFillPhone } from 'react-icons/ai/index.js';
+import { MdEmail } from 'react-icons/md/index.js';
+
+export interface Props {
+  name: string;
+  jobTitle: string;
+  image: string;
+  linkedInLink: string;
+  phoneNumber: string;
+  email: string;
+}
+
+const { name, jobTitle, image, linkedInLink, phoneNumber, email } = Astro.props;
+---
+
+<section class='w-full mx-auto py-4'>
+  <div class='flex md:flex-row flex-col'>
+    <div class='flex flex-col md:w-[50%]'>
+      <h2 class='text-xl md:text-2xl font-semibold'>{name}</h2>
+      <p>{jobTitle}</p>
+      <a class='flex items-center gap-1 text-teal-600 hover:underline underline-offset-2' href={`mailto:${email}`}>
+        <MdEmail />
+        {email}
+      </a>
+      <a class='flex items-center gap-1 text-teal-600 hover:underline underline-offset-2' href={linkedInLink}>
+        <IoLogoLinkedin />
+        LinkedIn
+      </a>
+      <a class='flex items-center gap-1 text-teal-600 hover:underline underline-offset-2' href={`tel:${phoneNumber}`}>
+        <AiFillPhone />
+        {phoneNumber}
+      </a>
+    </div>
+    <div class='flex justify-center md:justify-end items-center md:w-[50%] md:pt-0 pt-4'>
+      <img
+        src={image}
+        alt={`${name} profile image`}
+        class='w-[150px] h-[150px] md:w-[200px] md:h-[200px] border-2 border-backgroundLightButtons rounded-2xl dark:border-teal-600'
+      />
+    </div>
+  </div>
+</section>

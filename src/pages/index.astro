@@ -1,10 +1,12 @@
 ---
+import AboutSection from '../components/aboout/AboutSection.astro';
 import BaseHead from '../components/BaseHead.astro';
 import Blurb from '../components/blurb/Blurb.astro';
 import Body from '../components/Body.astro';
 import Content from '../components/Content.astro';
 import Header from '../components/header/Header.astro';
 import Main from '../components/Main.astro';
+import MostRecentVideos from '../components/mostRecentVideos/MostRecentVideos';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 ---
 
@@ -19,6 +21,8 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
     <Main>
       <Content>
         <Blurb />
+        <AboutSection />
+        <MostRecentVideos client:visible />
       </Content>
     </Main>
   </Body>

@@ -9,7 +9,7 @@ export default function DropdownMenu() {
       <div>
         <Menu.Button
           className={
-            'inline-flex justify-center rounded-md border border-zinc-400 dark:border-zinc-700 p-2 text-sm font-medium shadow-sm hover:bg-orange-200 dark:hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 focus:ring-offset-gray-100 transition-all'
+            'inline-flex justify-center rounded-md border border-zinc-400 dark:border-zinc-700 p-2 text-sm font-medium shadow-sm hover:bg-backgroundLightButtons dark:hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 focus:ring-offset-gray-100 transition-all'
           }
           aria-label='menu'
         >
@@ -31,8 +31,8 @@ export default function DropdownMenu() {
           }
         >
           <div className='py-1'>
-            <DropdownMenuItem href='/projects'>Projects</DropdownMenuItem>
-            <DropdownMenuItem href='/contactMe'>Contact Info</DropdownMenuItem>
+            <DropdownMenuItem href='#about'>About</DropdownMenuItem>
+            <DropdownMenuItem href='#videos'>Videos</DropdownMenuItem>
           </div>
         </Menu.Items>
       </Transition>
