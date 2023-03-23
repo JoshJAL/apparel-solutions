@@ -5,7 +5,8 @@ export const SITE_DESCRIPTION =
 
 export const MICHAEL_EMAIL = 'Michael.Levine@apparel-solution.com';
 
-export const MICAHEL_PHONE = '813-579-5736';
+export const MICHAEL_PHONE = '813-579-5736';
+
 export const CHAU_EMAIL = 'Chau.Truong@apparel-solution.com';
 
 export const CHAU_PHONE = '+84 9 3532 6684';

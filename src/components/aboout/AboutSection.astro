@@ -2,6 +2,7 @@
 import AboutIndividual from './AboutIndividual.astro';
 import MichaelHeadshot from '../images/Michael-Levine.jpg';
 import ChauHeadshot from '../images/Chau-Truong.jpg';
+import { CHAU_EMAIL, CHAU_PHONE, MICHAEL_EMAIL, MICHAEL_PHONE } from '../../consts';
 ---
 
 <div id='about' class='w-full mx-auto'>
@@ -9,16 +10,16 @@ import ChauHeadshot from '../images/Chau-Truong.jpg';
     name='Michael Levine'
     jobTitle='V.P. of Sales at Aurora Investments Global, LTD'
     linkedInLink='https://www.linkedin.com/in/michael-levine-6561516/'
-    phoneNumber='813-579-5736'
-    email='Michael.Levine@apparel-solution.com'
+    phoneNumber={MICHAEL_PHONE}
+    email={MICHAEL_EMAIL}
     image={MichaelHeadshot}
   />
   <AboutIndividual
     name='Chau Truong'
     jobTitle='Sourcing and production specialist'
     linkedInLink='https://www.linkedin.com/in/chau-truong-41325842/'
-    phoneNumber='+84 9 3532 6684'
-    email='Chau.Truong@apparel-solution.com'
+    phoneNumber={CHAU_PHONE}
+    email={CHAU_EMAIL}
     image={ChauHeadshot}
   />
 </div>

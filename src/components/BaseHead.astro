@@ -9,7 +9,11 @@ export interface Props {
   image?: string;
 }
 
-const { title, description, image = 'https://www.joshualevine.me/images/happyHeadshot.jpg' } = Astro.props;
+const {
+  title,
+  description,
+  image = 'http://nebula.wsimg.com/obj/MERDNjlGQzNDMUU5NjQ0NzgzNkQ6NzRjZjMwZTRmZWY3YmM2OTkzMmFmNmQwYmY3Y2M5ODQ='
+} = Astro.props;
 ---
 
 <!-- Font -->

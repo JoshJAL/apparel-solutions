@@ -7,6 +7,7 @@ import Content from '../components/Content.astro';
 import Header from '../components/header/Header.astro';
 import Main from '../components/Main.astro';
 import MostRecentVideos from '../components/mostRecentVideos/MostRecentVideos';
+import SendEmail from '../components/sendEmail/SendEmail';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 ---
 
@@ -22,6 +23,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
       <Content>
         <Blurb />
         <AboutSection />
+        <SendEmail client:visible />
         <MostRecentVideos client:visible />
       </Content>
     </Main>
