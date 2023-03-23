@@ -7,7 +7,8 @@ module.exports = {
       colors: {
         backgroundLight: 'rgb(248, 242, 218)',
         backgroundLightButtons: 'rgb(250, 215, 72)',
-        backgroundLightButtonsHover: 'rgb(227, 194, 59)'
+        backgroundLightButtonsHover: 'rgb(227, 194, 59)',
+        oldPaper: 'rgb(224, 201, 166)'
       },
       fontFamily: {
         seaside: ['Seaside Resort NF']

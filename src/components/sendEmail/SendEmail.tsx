@@ -1,15 +1,14 @@
 import { useState } from 'react';
-import { CHAU_EMAIL, MICHAEL_EMAIL, MICHAEL_PHONE } from '../../consts';
+import { MICHAEL_EMAIL } from '../../consts';
 
 export default function SendEmail() {
-  const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    window.open(`mailto:${email}?subject=Message from ${name}&body=${message}`);
+    window.open(`mailto:${MICHAEL_EMAIL}?subject=Message from ${name}&body=${message}`);
 
     setName('');
     setMessage('');
@@ -17,22 +16,8 @@ export default function SendEmail() {
 
   return (
     <div id='contact'>
-      <h2 className='text-xl font-semibold'>Contact Us</h2>
+      <h2 className='text-xl font-semibold'>Send Me an Email</h2>
       <form className='flex flex-col my-3' onSubmit={(e) => handleSubmit(e)}>
-        <label className='font-semibold py-2'>Who would you like to send an email to?</label>
-        <select
-          className='p-2 rounded-md text-zinc-900 outline-none border-2 border-backgroundLightButtons dark:border-teal-600 shadow-md'
-          onChange={(e) => setEmail(e.target.value)}
-          defaultValue=''
-          required
-        >
-          <option value='' disabled>
-            Please select and option
-          </option>
-          <option value={MICHAEL_EMAIL}>Michael Levine</option>
-          <option value={CHAU_EMAIL}>Chau Truong</option>
-          <option value={`${CHAU_EMAIL}; ${MICHAEL_EMAIL}`}>Both</option>
-        </select>
         <label className='font-semibold py-2' htmlFor='input-name'>
           What is your name?
         </label>
@@ -46,7 +31,7 @@ export default function SendEmail() {
           onChange={(e) => setName(e.target.value)}
         />
         <label className='font-semibold py-2' htmlFor='input-message'>
-          What is your message
+          What is your message?
         </label>
         <textarea
           name='input-message'

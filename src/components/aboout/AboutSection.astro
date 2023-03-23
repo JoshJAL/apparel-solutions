@@ -1,8 +1,7 @@
 ---
 import AboutIndividual from './AboutIndividual.astro';
 import MichaelHeadshot from '/images/Michael-Levine.jpg';
-import ChauHeadshot from '/images/Chau-Truong.jpg';
-import { CHAU_EMAIL, CHAU_PHONE, MICHAEL_EMAIL, MICHAEL_PHONE } from '../../consts';
+import { MICHAEL_EMAIL, MICHAEL_PHONE } from '../../consts';
 ---
 
 <div id='about' class='w-full mx-auto'>
@@ -13,13 +12,5 @@ import { CHAU_EMAIL, CHAU_PHONE, MICHAEL_EMAIL, MICHAEL_PHONE } from '../../cons
     phoneNumber={MICHAEL_PHONE}
     email={MICHAEL_EMAIL}
     image={MichaelHeadshot}
-  />
-  <AboutIndividual
-    name='Chau Truong'
-    jobTitle='Sourcing and production specialist'
-    linkedInLink='https://www.linkedin.com/in/chau-truong-41325842/'
-    phoneNumber={CHAU_PHONE}
-    email={CHAU_EMAIL}
-    image={ChauHeadshot}
   />
 </div>
