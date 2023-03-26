@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import LoadingSpinner from '../loadingSpinner/LoadingSpinner';
 
 type Video = {
   author: string;
@@ -36,17 +37,25 @@ export default function MostRecentVideos() {
   return (
     <section className='py-4' id='videos'>
       <h2 className='text-xl font-semibold md:mb-2'>Latest YouTube Videos</h2>
-      <div className='md:grid-cols-2 md:grid md:gap-3'>
-        {videos.map((video, index) => (
-          <a target={'_blank'} href={video.link} key={index}>
-            <div className='border-2 border-backgroundLightButtons rounded-xl p-3 my-4 md:my-0 dark:border-teal-600 hover:rotate-2 transition-all duration-200 ease-in-out flex flex-col items-center'>
-              <p className='text-lg mb-2'>{video.title}</p>
-              <div>
-                <img src={video.thumbnail} alt={`${video.title} thumbnail`} />
+      <div
+        className={`${
+          videos.length === 0 ? 'flex w-full items-center justify-center' : 'md:grid-cols-2 md:grid md:gap-3'
+        }`}
+      >
+        {videos.length === 0 ? (
+          <LoadingSpinner additionalClasses='mt-40' />
+        ) : (
+          videos.map((video, index) => (
+            <a target={'_blank'} href={video.link} key={index}>
+              <div className='border-2 border-backgroundLightButtons rounded-xl p-3 my-4 md:my-0 dark:border-teal-600 hover:rotate-2 transition-all duration-200 ease-in-out flex flex-col items-centers'>
+                <p className='text-lg mb-2'>{video.title}</p>
+                <div>
+                  <img src={video.thumbnail} alt={`${video.title} thumbnail`} />
+                </div>
               </div>
-            </div>
-          </a>
-        ))}
+            </a>
+          ))
+        )}
       </div>
     </section>
   );
