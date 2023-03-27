@@ -1,11 +1,10 @@
 ---
 import BaseHead from '../../../components/BaseHead.astro';
 import Body from '../../../components/Body.astro';
-import CategoryBreadCrumb from '../../../components/breadCrumb/CategoryBreadCrumb';
 import Content from '../../../components/Content.astro';
 import Header from '../../../components/header/Header.astro';
 import Main from '../../../components/Main.astro';
-import FilteredPosts from '../../../components/posts/FilteredPosts';
+import PostPage from '../../../components/posts/PostPage';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../../consts';
 ---
 
@@ -19,8 +18,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../../../consts';
     <Header />
     <Main>
       <Content>
-        <CategoryBreadCrumb category='Posts About YouTube Videos' />
-        <FilteredPosts filter='youtubeVideo' client:load />
+        <PostPage client:load />
       </Content>
     </Main>
   </Body>

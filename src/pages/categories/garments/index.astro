@@ -1,6 +1,7 @@
 ---
 import BaseHead from '../../../components/BaseHead.astro';
 import Body from '../../../components/Body.astro';
+import CategoryBreadCrumb from '../../../components/breadCrumb/CategoryBreadCrumb';
 import Content from '../../../components/Content.astro';
 import Header from '../../../components/header/Header.astro';
 import Main from '../../../components/Main.astro';
@@ -18,6 +19,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../../../consts';
     <Header />
     <Main>
       <Content>
+        <CategoryBreadCrumb category='Posts About Garments' />
         <FilteredPosts filter='garment' client:load />
       </Content>
     </Main>
