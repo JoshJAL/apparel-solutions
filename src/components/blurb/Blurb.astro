@@ -1,4 +1,11 @@
+---
+export interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+---
+
 <section class='px-7 py-4 my-4 rounded-lg text-xl text-center bg-oldPaper dark:bg-teal-600 text-zinc-900'>
-  Apparel Solutions is the US sales arm for our Vietnam factories. Men's and women's wearing apparel of all fabrication
-  and makes.
+  {text}
 </section>

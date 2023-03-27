@@ -1,22 +1,6 @@
 import { useState, useEffect } from 'react';
+import type { Video } from '../../../types/Video';
 import LoadingSpinner from '../loadingSpinner/LoadingSpinner';
-
-type Video = {
-  author: string;
-  categories: string[];
-  content: string;
-  description: string;
-  enclosure: {
-    link: string;
-    type: string;
-    thumbnail: string;
-  };
-  guid: string;
-  link: string;
-  pubDate: string;
-  thumbnail: string;
-  title: string;
-};
 
 export default function MostRecentVideos() {
   const baseURL =
