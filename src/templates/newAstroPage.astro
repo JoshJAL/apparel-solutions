@@ -1,0 +1,26 @@
+---
+// Make sure to adjust the import paths if needed
+import BaseHead from '../components/BaseHead.astro';
+import Body from '../components/Body.astro';
+import Content from '../components/Content.astro';
+import Header from '../components/header/Header.astro';
+import Main from '../components/Main.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+
+  <Body>
+    <Header />
+    <Main>
+      <Content>
+        <h1>My Page</h1>
+        <p>My page content</p>
+      </Content>
+    </Main>
+  </Body>
+</html>
