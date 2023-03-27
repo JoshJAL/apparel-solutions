@@ -1,6 +1,4 @@
 ---
-const { id } = Astro.params;
-// Make sure to adjust the import paths if needed
 import BaseHead from '../../components/BaseHead.astro';
 import Body from '../../components/Body.astro';
 import Content from '../../components/Content.astro';
@@ -8,6 +6,25 @@ import Header from '../../components/header/Header.astro';
 import Main from '../../components/Main.astro';
 import PostPage from '../../components/posts/PostPage';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import supabase from '../../../utils/supabase';
+
+export async function getStaticPaths() {
+  async function getPosts() {
+    const { data } = await supabase.from('posts').select('*');
+
+    if (!data) return [];
+    return data;
+  }
+
+  const posts = await getPosts();
+  return posts!.map((post) => {
+    return {
+      params: { id: post.id }
+    };
+  });
+}
+
+const { id } = Astro.params;
 ---
 
 <!DOCTYPE html>

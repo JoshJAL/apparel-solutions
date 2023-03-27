@@ -1,6 +1,5 @@
 import { Menu, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
-import { IoMenu } from 'react-icons/io5/index.js';
 import DropdownMenuItem from './DropdownMenuItem';
 
 export default function PostsDropdownMenu() {
