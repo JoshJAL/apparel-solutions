@@ -3,12 +3,14 @@ import HeaderLink from './HeaderLink.astro';
 import DropdownMenu from '../dropdownMenu/DropdownMenu';
 import ThemeToggleButton from '../themeToggleButton/ThemeToggleButton';
 import TextileIcon from '../textileIcon/TextileIcon';
+
+const { pathname, host } = Astro.url;
 ---
 
 <header class='fixed w-full p-2 z-20 backdrop-blur-md'>
   <div class='mx-auto max-w-3xl'>
     <nav class='flex items-center gap-3 text-base'>
-      <a href='#' class='group flex'>
+      <a href={pathname !== '/' ? '/' : '#'} class='group flex'>
         <TextileIcon />
         <h2
           class='font-seaside tracking-tighter p-2 text-xl text-teal-600 dark:text-oldPaper flex items-center justify-center'
@@ -17,14 +19,14 @@ import TextileIcon from '../textileIcon/TextileIcon';
         </h2>
       </a>
       <div class='items-center gap-6 hidden md:flex'>
-        <HeaderLink href={'#about'}>About</HeaderLink>
-        <HeaderLink href={'#contact'}>Contact Us</HeaderLink>
-        <HeaderLink href={'#videos'}>Videos</HeaderLink>
+        <HeaderLink href={pathname !== '/' ? '/#about' : '#about'}>About</HeaderLink>
+        <HeaderLink href={pathname !== '/' ? '/#contact' : '#contact'}>Contact Me</HeaderLink>
+        <HeaderLink href={pathname !== '/' ? '/#videos' : '#videos'}>Videos</HeaderLink>
       </div>
       <div class='flex-1'></div>
       <ThemeToggleButton client:visible />
       <div class='md:hidden'>
-        <DropdownMenu client:visible />
+        <DropdownMenu client:visible pathname={pathname} />
       </div>
     </nav>
   </div>

@@ -2,6 +2,7 @@
 import BaseHead from '../../components/BaseHead.astro';
 import Body from '../../components/Body.astro';
 import Content from '../../components/Content.astro';
+import CreatePostForm from '../../components/createPostForm/CreatePostForm';
 import Header from '../../components/header/Header.astro';
 import Main from '../../components/Main.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
@@ -17,8 +18,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
     <Header />
     <Main>
       <Content>
-        <h1>My Page</h1>
-        <p>My page content</p>
+        <CreatePostForm client:load />
       </Content>
     </Main>
   </Body>
