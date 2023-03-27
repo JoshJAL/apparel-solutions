@@ -1,0 +1,25 @@
+---
+import BaseHead from '../../../components/BaseHead.astro';
+import Body from '../../../components/Body.astro';
+import Content from '../../../components/Content.astro';
+import Header from '../../../components/header/Header.astro';
+import Main from '../../../components/Main.astro';
+import FilteredPosts from '../../../components/posts/FilteredPosts';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../../consts';
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+
+  <Body>
+    <Header />
+    <Main>
+      <Content>
+        <FilteredPosts filter='garment' client:load />
+      </Content>
+    </Main>
+  </Body>
+</html>

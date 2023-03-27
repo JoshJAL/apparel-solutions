@@ -1,20 +1,20 @@
-import supabase from '../../../utils/supabase';
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { Post } from '../../../types/Post';
+import supabase from '../../../utils/supabase';
 import LoadingSpinner from '../loadingSpinner/LoadingSpinner';
 import PostTile from './PostTile';
 
-export default function Posts() {
+interface FilteredPostsProps {
+  filter: string;
+}
+
+export default function FilteredPosts({ filter }: FilteredPostsProps) {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchPosts() {
-      const { data, error } = await supabase.from('posts').select('*').order('id', { ascending: false });
-
-      if (error) {
-        alert(error.message);
-      }
+      const { data } = await supabase.from('posts').select('*').eq('tag', filter).order('id', { ascending: false });
 
       if (data) setPosts(data as Post[]);
       setLoading(false);

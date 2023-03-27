@@ -22,7 +22,10 @@ export default function BreadCrumb({ category, title }: BreadCrumbProps) {
           <IoChevronForward />
         </span>
       </a>
-      <a className='flex items-center justify-center text-xl hover:underline underline-offset-2' href={'/categories'}>
+      <a
+        className='flex items-center justify-center text-xl hover:underline underline-offset-2'
+        href={'/categories/' + category + 's'}
+      >
         {capitalizeFirstLetter(category)}
         <IoChevronForward />
       </a>

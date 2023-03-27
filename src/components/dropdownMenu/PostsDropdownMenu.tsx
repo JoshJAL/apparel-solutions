@@ -3,11 +3,7 @@ import { Fragment } from 'react';
 import { IoMenu } from 'react-icons/io5/index.js';
 import DropdownMenuItem from './DropdownMenuItem';
 
-interface DropdownMenuProps {
-  pathname: string;
-}
-
-export default function DropdownMenu({ pathname }: DropdownMenuProps) {
+export default function PostsDropdownMenu() {
   return (
     <Menu as={'div'} className='relative inline-block text-left'>
       <div>
@@ -17,7 +13,7 @@ export default function DropdownMenu({ pathname }: DropdownMenuProps) {
           }
           aria-label='menu'
         >
-          <IoMenu className='h-5 w-5' />
+          Posts
         </Menu.Button>
       </div>
       <Transition
@@ -35,9 +31,6 @@ export default function DropdownMenu({ pathname }: DropdownMenuProps) {
           }
         >
           <div className='py-1'>
-            <DropdownMenuItem href={pathname !== '/' ? '/#about' : '#about'}>About</DropdownMenuItem>
-            <DropdownMenuItem href={pathname !== '/' ? '/#contact' : '#contact'}>Contact Me</DropdownMenuItem>
-            <DropdownMenuItem href={pathname !== '/' ? '/#videos' : '#videos'}>Videos</DropdownMenuItem>
             <DropdownMenuItem href={'/categories/fabrics'}>Fabric Posts</DropdownMenuItem>
             <DropdownMenuItem href={'/categories/garments'}>Garment Posts</DropdownMenuItem>
             <DropdownMenuItem href={'/categories/youtubeVideos'}>YouTube Video Posts</DropdownMenuItem>

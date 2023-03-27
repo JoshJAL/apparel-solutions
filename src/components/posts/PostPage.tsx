@@ -28,19 +28,20 @@ export default function PostPage({ id }: PostPageProps) {
     fetchPost();
   }, []);
 
-  if (loading)
+  if (loading) {
     return (
       <div className='flex justify-center items-center mt-40'>
         <LoadingSpinner />
       </div>
     );
+  }
 
   return (
     <div>
       <BreadCrumb category={post?.tag as string} title={post?.title as string} />
       <p className={`${post?.youtube_link ? '' : 'pb-5'} text-lg`}>&emsp;{post?.description}</p>
       {post?.youtube_link && (
-        <div className='w-full flex my-5'>
+        <div className='w-full flex my-5 items-center justify-center'>
           <ReactPlayer controls url={post?.youtube_link as string} />
         </div>
       )}
