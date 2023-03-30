@@ -1,5 +1,6 @@
 import supabase from '../../../utils/supabase';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import LoginForm from '../loginForm/LoginForm';
 
 export default function CreatePostForm() {
   const [title, setTitle] = useState('');
@@ -14,6 +15,17 @@ export default function CreatePostForm() {
   const fileInputRef = useRef(null);
   const [uploadedThumbnail, setUploadedThumbnail] = useState<File | null>(null);
   const thumbnailInputRef = useRef(null);
+  const [session, setSession] = useState<any>(null);
+
+  useEffect(() => {
+    async function getSession() {
+      const session = await supabase.auth.getSession();
+      const sessionData = session.data.session;
+      setSession(sessionData);
+    }
+
+    getSession();
+  }, [setSession]);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -111,9 +123,11 @@ export default function CreatePostForm() {
     handleUploadFiles(chosenFiles);
   }
 
+  if (!session) return <LoginForm setSession={setSession} />;
+
   return (
     <>
-      <form className='flex flex-col' onSubmit={handleSubmit}>
+      <form className={'flex flex-col'} onSubmit={handleSubmit}>
         <label className='font-semibold py-2' htmlFor='title'>
           Title
         </label>

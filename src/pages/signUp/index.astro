@@ -2,10 +2,9 @@
 import BaseHead from '../../components/BaseHead.astro';
 import Body from '../../components/Body.astro';
 import Content from '../../components/Content.astro';
-import CreatePostForm from '../../components/createPostForm/CreatePostForm';
 import Header from '../../components/header/Header.astro';
-import LoginForm from '../../components/loginForm/LoginForm';
 import Main from '../../components/Main.astro';
+import SignUpForm from '../../components/signUpForm/SignUpForm';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 ---
 
@@ -19,7 +18,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
     <Header />
     <Main>
       <Content>
-        <CreatePostForm client:load />
+        <SignUpForm client:load />
       </Content>
     </Main>
   </Body>
