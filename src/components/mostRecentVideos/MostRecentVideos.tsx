@@ -32,7 +32,9 @@ export default function MostRecentVideos() {
           videos.map((video, index) => (
             <a target={'_blank'} href={video.link} key={index}>
               <div className='border-2 border-backgroundLightButtons rounded-xl p-3 my-4 md:my-0 dark:border-teal-600 hover:rotate-2 transition-all duration-200 ease-in-out flex flex-col items-centers'>
-                <p className='text-lg mb-2'>{video.title}</p>
+                <p className='text-lg mb-2 text-zinc-900 dark:text-zinc-300 hover:text-zinc-900 hover:dark:text-zinc-300'>
+                  {video.title}
+                </p>
                 <div>
                   <img src={video.thumbnail} alt={`${video.title} thumbnail`} />
                 </div>

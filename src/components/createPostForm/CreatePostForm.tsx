@@ -1,6 +1,7 @@
 import supabase from '../../../utils/supabase';
 import { useRef, useState, useEffect } from 'react';
 import LoginForm from '../loginForm/LoginForm';
+import RichTextEditor from '../richTextEditor/RichTextEditor';
 
 export default function CreatePostForm() {
   const [title, setTitle] = useState('');
@@ -127,7 +128,7 @@ export default function CreatePostForm() {
 
   return (
     <>
-      <form className={'flex flex-col'} onSubmit={handleSubmit}>
+      <form className={'flex flex-col w-full'} onSubmit={handleSubmit}>
         <label className='font-semibold py-2' htmlFor='title'>
           Title
         </label>
@@ -184,15 +185,8 @@ export default function CreatePostForm() {
         <label className='font-semibold py-2' htmlFor='content'>
           Content
         </label>
-        <textarea
-          required
-          className='p-2 rounded-md text-zinc-900 outline-none border-2 border-backgroundLightButtons dark:border-teal-600 shadow-md'
-          rows={6}
-          name='content'
-          id='content'
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-        />
+
+        <RichTextEditor setText={setContent} />
         <label className='flex gap-2 font-semibold py-2'>
           <input
             className='accent-backgroundLightButtons dark:accent-teal-600'

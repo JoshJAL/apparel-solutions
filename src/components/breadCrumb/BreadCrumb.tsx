@@ -14,7 +14,7 @@ export default function BreadCrumb({ category, title }: BreadCrumbProps) {
   return (
     <div className='flex pb-4 flex-wrap gap-2 md:gap-0'>
       <a
-        className='flex items-center justify-center text-teal-600 dark:text-oldPaper text-xl hover:underline underline-offset-2'
+        className='flex items-center justify-center text-teal-600 dark:text-oldPaper hover:text-teal-600 hover:dark:text-oldPaper text-xl hover:underline underline-offset-2'
         href={'/posts'}
       >
         Posts
@@ -23,7 +23,7 @@ export default function BreadCrumb({ category, title }: BreadCrumbProps) {
         </span>
       </a>
       <a
-        className='flex items-center justify-center text-xl hover:underline underline-offset-2'
+        className='flex items-center justify-center text-xl hover:underline underline-offset-2 text-zinc-900 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-300'
         href={'/categories/' + category + 's'}
       >
         {capitalizeFirstLetter(category)}

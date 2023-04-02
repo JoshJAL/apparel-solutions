@@ -8,7 +8,7 @@ export default function CategoryBreadCrumb({ category }: BreadCrumbProps) {
   return (
     <div className='flex pb-4 flex-wrap gap-2 md:gap-0'>
       <a
-        className='flex items-center justify-center text-teal-600 dark:text-oldPaper text-xl hover:underline underline-offset-2'
+        className='flex items-center justify-center text-teal-600 hover:text-teal-600 dark:text-oldPaper dark:hover:text-oldPaper text-xl hover:underline underline-offset-2'
         href={'/posts'}
       >
         All Posts
