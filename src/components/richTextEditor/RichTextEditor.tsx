@@ -2,7 +2,16 @@ import { EditorContent, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import RichTextButton from './RichTextButton';
 import Link from '@tiptap/extension-link';
-import { FaBold, FaItalic, FaLink, FaRedo, FaStrikethrough, FaUnderline, FaUndo, FaUnlink } from 'react-icons/fa';
+import {
+  FaBold,
+  FaItalic,
+  FaLink,
+  FaRedo,
+  FaStrikethrough,
+  FaUnderline,
+  FaUndo,
+  FaUnlink
+} from 'react-icons/fa/index.js';
 import Underline from '@tiptap/extension-underline';
 import { useCallback } from 'react';
 
